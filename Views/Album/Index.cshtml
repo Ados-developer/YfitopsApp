@@ -1,0 +1,51 @@
+﻿@model List<AlbumViewModel>
+@using System.Security.Claims
+
+<div class="text-center">
+    @if (User.IsInRole("Admin"))
+    {
+        <h1>List of Albums</h1>
+    }
+    else if (User.IsInRole("Artist"))
+    {
+        <h1>My Albums</h1>
+    }
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+    <a asp-action="Create" asp-controller="Album" class="hero-btn hero-btn-primary">Create Album</a>
+</div>
+<table class="table">
+    <colgroup>
+        <col style="width: 5%;">
+        <col style="width: 35%;">
+        <col style="width: 35%;">
+        <col style="width: 25%;">
+    </colgroup>
+    <thead>
+        <tr class="trRow">
+            <th scope="col" class="text-center d-none d-md-table-cell">#</th>
+            <th scope="col" class="text-left" style="padding-left:20px;">Title</th>
+            <th scope="col" class="text-center d-none d-sm-table-cell">Artist</th>
+            <th scope="col" class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var album in Model)
+        {
+            <tr class="trRow">
+                <th class="text-center d-none d-md-table-cell">@album.Id</th>
+                <td class="text-left" style="padding-left:20px;">@album.Title</td>
+                <td class="text-center d-none d-sm-table-cell">@album.ArtistFullName</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-controller="Album" asp-route-id="@album.Id" class="icon-btn icon-btn-primary"><i class="fas fa-edit"></i></a>
+                    <a asp-action="Details" asp-controller="Album" asp-route-id="@album.Id" class="icon-btn icon-btn-primary"><i class="fas fa-eye"></i></a>
+                    <a asp-action="Delete" asp-controller="Album" asp-route-id="@album.Id" class="icon-btn icon-btn-danger"><i class="fas fa-trash-alt"></i></a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Delete Account";
+}
+
+<form asp-action="Delete" method="post" class="form">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="buttons-div">
+        <div class="form-button">
+            <button type="submit" class="hero-btn hero-btn-danger">Yes, delete my account</button>
+        </div>
+
+        <div class="hero-button">
+            <a asp-action="Index" asp-controller="Account" class="hero-btn hero-btn-primary">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,10 @@
+﻿@model AlbumViewModel
+<div class="text-center">
+    <h2>@Model.Title</h2>
+
+    @foreach (var track in Model.Tracks)
+    {
+        <p>@track.Title</p>
+    }
+    <a asp-action="Index" asp-controller="Album" class="hero-btn hero-btn-primary">Back</a>
+</div>

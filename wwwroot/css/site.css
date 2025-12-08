@@ -1,0 +1,358 @@
+﻿html {
+    position: relative;
+    min-height: 100%;
+    font-size: 16px;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #e1dcc5;
+    color: #333;
+    font-weight: 600;
+}
+
+main {
+    padding: 150px 0 50px 0;
+}
+
+h1 {
+    font-family: 'Californian FB';
+    text-transform: uppercase;
+    padding: 50px 0;
+    font-size: 60px;
+    font-weight: 600;
+    color: #333
+}
+
+h2 {
+    font-family: 'Californian FB';
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin:40px 0;
+}
+
+h3 {
+    font-family: 'Californian FB';
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    border-bottom: 2px solid #333;
+    color: #333;
+}
+
+p {
+    color: #333;
+}
+
+.user-settings a {
+    display:block;
+    margin: 20px auto;
+    font-size:20px;
+}
+.user-settings a:hover {
+    text-decoration: underline;
+    border:none;
+}
+.artist-info {
+    margin: 30px auto;
+    font-size:25px;
+}
+.btn-link {
+    color:#d40303!important;
+}
+
+/* HEADER AREA */
+.navbar {
+    background-color: #333 !important;
+    padding: 20px 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+    .nav-item a {
+        text-decoration: none;
+        color: #e1dcc5;
+        padding: 10px 15px;
+        font-weight: 600;
+        font-size: 18px;
+        border-radius: 20px;
+        transition: color .5s ease;
+        transition: background-color .5s ease;
+    }
+
+    .nav-item button {
+        text-decoration: none;
+        border: none;
+        color: #e1dcc5;
+        padding: 10px 15px;
+        font-weight: 600;
+        font-size: 18px;
+        border-radius: 20px;
+        transition: color .5s ease;
+        transition: background-color .5s ease;
+        background-color: transparent;
+    }
+
+        .nav-item button:hover {
+            color: #333;
+            background-color: #e1dcc5;
+        }
+
+    .nav-item a:hover {
+        color: #333;
+        background-color: #e1dcc5;
+    }
+
+.navbar-brand {
+    color: #e1dcc5 !important;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Californian FB'
+}
+.navbar-brand:hover {
+    border:none;
+}
+
+    .navbar-brand i {
+        color: #e1dcc5;
+        font-size: 50px;
+        margin-right: 15px;
+    }
+
+.navbar-toggler i {
+    font-size: 40px;
+    color: #e1dcc5;
+}
+
+.navbar-toggler {
+    text-decoration: none !important;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: none;
+}
+
+    .navbar-toggler:hover,
+    .navbar-toggler:active,
+    navbar-toggler:focus {
+        border: none;
+        box-shadow: none;
+    }
+
+@media (max-width: 991.2px) {
+    .nav-item a {
+        font-size: 16px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+        .navbar-brand i {
+            font-size: 35px;
+        }
+
+    .navbar-toggler i {
+        font-size: 30px;
+    }
+}
+
+/* FOOTER */
+.footer {
+    border-top: 1px solid #333;
+}
+
+/* TABLES */
+.table {
+    margin: 40px auto;
+    color: #333;
+}
+
+    .table thead {
+        background-color: #333;
+        color: #e1dcc5;
+    }
+
+    .table tbody tr {
+        border-color: #333;
+    }
+
+.trRow th,
+.trRow td {
+    padding: 20px 0;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    table col {
+        width: auto !important;
+    }
+
+    table {
+        font-size: 13px;
+    }
+}
+/* BUTTONs */
+.hero-btn {
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all .5s ease;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: auto;
+    margin: 20px auto;
+}
+
+.hero-btn-primary {
+    background-color: #333;
+    color: #e1dcc5;
+    border: 3px solid #333;
+}
+
+    .hero-btn-primary:hover {
+        color: #333;
+        background-color: #e1dcc5;
+    }
+
+.hero-btn-danger {
+    background-color: #d40303;
+    color: #e1dcc5;
+}
+
+    .hero-btn-danger:hover {
+        background-color: #850101;
+    }
+
+.icon-btn {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: all .5s ease;
+    margin: 5px;
+}
+
+.icon-btn-primary {
+    color: #333;
+}
+
+    .icon-btn-primary:hover {
+        color: #e1dcc5;
+        background-color: #333;
+    }
+
+.icon-btn-danger {
+    color: #850101;
+}
+
+    .icon-btn-danger:hover {
+        color: #e1dcc5;
+        background-color: #850101;
+    }
+
+/* FORMS */
+.form {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.form-control {
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid #333;
+    background-color: #e1dcc5;
+    font-weight: 500;
+    transition: background-color .5s ease;
+    text-align: center;
+}
+
+    .form-control[readonly] {
+        background-color: #333;
+        color: #e1dcc5;
+    }
+
+    .form-control:focus {
+        color: #333;
+        background-color: #e1dcc5;
+        border-color: #333;
+        box-shadow: 0 0 0 1px #333;
+    }
+
+.form-item-checkbox {
+    width: 50%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+    .form-item-checkbox input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 22px;
+        height: 22px;
+        border: 2px solid #333;
+        border-radius: 4px;
+        background-color: #e1dcc5;
+        cursor: pointer;
+        transition: background-color .3s ease, border-color .3s ease;
+    }
+
+        .form-item-checkbox input[type="checkbox"]:checked {
+            background-color: #333;
+            border-color: #333;
+        }
+
+            .form-item-checkbox input[type="checkbox"]:checked::before {
+                content: "✔";
+                color: #e1dcc5;
+                font-size: 16px;
+                font-weight: bold;
+                position: relative;
+                top: -5px;
+                left: -1px;
+            }
+
+        .form-item-checkbox input[type="checkbox"]:hover {
+            background-color: #d6d1be;
+        }
+
+    .form-item-checkbox label {
+        font-weight: 600;
+        font-size: 18px;
+        color: #333;
+        cursor: pointer;
+        user-select: none;
+    }

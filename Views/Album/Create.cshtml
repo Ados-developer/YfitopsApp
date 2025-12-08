@@ -1,0 +1,15 @@
+﻿@model AlbumViewModel
+<div class="text-center">
+    <h1>Create Album</h1>
+    <form asp-action="Create" method="post" class="form">
+        @Html.AntiForgeryToken()
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input class="form-control" asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="hero-btn hero-btn-primary">Create</button>
+        <a asp-action="Index" asp-controller="Album" class="hero-btn hero-btn-primary">Back</a>
+    </form>
+</div>

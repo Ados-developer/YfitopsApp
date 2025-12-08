@@ -1,0 +1,22 @@
+﻿@using YfitopsApp.Models.Public
+@model AlbumTracksViewModel
+
+<div class="text-center">
+    <h1>@Model.Album.Title Tracks</h1>
+    @foreach (var track in Model.Tracks)
+    {
+        <div class="artist-info">
+            <span>@track.Title</span>
+            <span>
+                <form asp-controller="Favorite" asp-action="Toggle" method="post" style="display:inline;">
+                    <input type="hidden" name="itemType" value="Track" />
+                    <input type="hidden" name="itemId" value="@track.Id" />
+                    <button type="submit" class="btn btn-link">
+                        <i class="@(track.IsFavorite ? "fas fa-heart" : "far fa-heart")"></i>
+                    </button>
+                </form>
+            </span>
+        </div>
+    }
+    <a asp-action="Artists" asp-controller="Public" class="hero-btn hero-btn-primary">Back</a>
+</div>

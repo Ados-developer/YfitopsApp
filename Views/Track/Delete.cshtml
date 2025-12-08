@@ -1,0 +1,17 @@
+﻿@model TrackViewModel
+<div class="text-center">
+    <h1>Delete track</h1>
+    <form asp-action="Delete" method="post" class="form">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="AlbumId" />
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input class="form-control" asp-for="Title" readonly />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <p>Do you want do delete this track ?</p>
+        <button type="submit" class="hero-btn hero-btn-danger">Delete</button>
+        <a asp-action="Index" asp-controller="Album" class="hero-btn hero-btn-primary">Back</a>
+    </form>
+</div>

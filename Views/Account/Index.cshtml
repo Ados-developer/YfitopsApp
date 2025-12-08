@@ -1,0 +1,23 @@
+﻿<div class="text-center user-settings">
+    <h1>User Settings</h1>
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+    @if (User.Identity!.IsAuthenticated)
+    {
+        <a asp-controller="Account" asp-action="ChangePassword">Change password</a>
+        <a asp-controller="Account" asp-action="Delete">Delete account</a>
+        <a asp-controller="Account" asp-action="Edit">Edit Account</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-controller="Album" asp-action="Index">Albums</a>
+        }
+        else if (User.IsInRole("Artist"))
+        {
+            <a asp-controller="Album" asp-action="Index">My Albums</a>
+        }
+    }
+</div>

@@ -1,0 +1,39 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="text-center">
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+</div>
+
+<div>
+    <form asp-action="Login" method="post" class="form">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="mb-3">
+            <input asp-for="Email" placeholder="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <input asp-for="Password" type="password" placeholder="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-item-checkbox">
+            <input asp-for="RememberMe" type="checkbox" />
+            <label asp-for="RememberMe">Remember Me</label>
+        </div>
+
+        <button type="submit" class="hero-btn hero-btn-primary">Login</button>
+
+    </form>
+    <p class="text-center">
+        Don't have an account yet?
+        <a asp-action="Register" asp-controller="Account">Click here</a>
+    </p>
+</div>
