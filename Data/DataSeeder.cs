@@ -17,8 +17,8 @@ namespace YfitopsApp.Data
 
         public static async Task SeedAdminUser(UserManager<User> userManager, YfitopsDbContext context)
         {
-            string adminEmail = "ado.strba@gmail.com";
-            string fullName = "Andrej Štrba";
+            string adminEmail = "admin@gmail.com";
+            string fullName = "Admin";
             var adminUser = await userManager.FindByEmailAsync(adminEmail);
             if (adminUser == null)
             {
@@ -29,7 +29,7 @@ namespace YfitopsApp.Data
                     FullName = fullName
                 };
 
-                var result = await userManager.CreateAsync(user, "asd461436");
+                var result = await userManager.CreateAsync(user, "asd123456");
                 if (!result.Succeeded)
                 {
                     throw new Exception("Failed to create admin: " + string.Join(", ", result.Errors.Select(e => e.Description)));

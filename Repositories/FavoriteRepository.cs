@@ -24,7 +24,7 @@ namespace YfitopsApp.Repositories
         public async Task<Favorite?> GetAsync(string userId, string itemType, string itemId)
         {
             return await _context.Favorites
-                .FirstOrDefaultAsync(f => f.UserId == userId && f.ItemType == itemType && f.ItemId == itemId.ToString());
+                .FirstOrDefaultAsync(f => f.UserId == userId && f.ItemType == itemType && f.ItemId == itemId);
         }
 
         public async Task AddAsync(Favorite favorite)
